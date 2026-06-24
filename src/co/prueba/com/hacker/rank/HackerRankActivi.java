@@ -36,6 +36,7 @@ public class HackerRankActivi {
 		} else {
 			mediana = (medElm.doubleValue() + medElmAux.doubleValue()) / 2;
 		}
+		
 		return mediana;
 	}
 
