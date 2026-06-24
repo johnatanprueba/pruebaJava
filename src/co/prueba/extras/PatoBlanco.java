@@ -3,25 +3,36 @@ package co.prueba.extras;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.DoubleToIntFunction;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class ClsG<T extends Collection>{
-	
-}
-interface In2{ int m();}
+class ClsG<T extends Collection> {
 
-interface In1{default int m() {return 0;}}
+}
+
+interface In2 {
+	int m();
+}
+
+interface In1 {
+	default int m() {
+		return 0;
+	}
+}
 
 //interface In3 extends In2,In1{}
 
-class Cls1 implements In1,In2{
-	
-	public int m() {return 0;}
+class Cls1 implements In1, In2 {
+
+	public int m() {
+		return 0;
+	}
 }
 
 interface I2 {
@@ -45,21 +56,23 @@ interface I {
 }
 
 class Ou implements I {
-	
+
 	static int valEs = 9;
-	
-	class Inn{
-		public void sludar() {System.out.println(valEs);}
+
+	class Inn {
+		public void sludar() {
+			System.out.println(valEs);
+		}
 	}
 }
 
-class B{
+class B {
 	int id;
-	
+
 	public B(int id) {
 		this.id = id;
 	}
-	
+
 	public String toString() {
 		return String.valueOf(id);
 	}
@@ -67,6 +80,7 @@ class B{
 
 public class PatoBlanco {
 	public int edad;
+	public int cont;
 
 	class Inner {
 		void saludar() {
@@ -101,38 +115,45 @@ public class PatoBlanco {
 		}
 	};
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 
 		String identi = "a32342*34";
 		System.out.println(identi.matches("^[a-zA-Z0-9]*$"));
-		
+
 		I2 i2 = null;
 		I2.meto();
-		
+
 		int[] j = new int[2];
-		
+
 		String k = "";
-		
+
 		k = "t";
 		Predicate<String> p = k::equalsIgnoreCase;
-		
-		DoubleToIntFunction dti = (double x)->(int)x;
-		
+
+		DoubleToIntFunction dti = (double x) -> (int) x;
+
 		Comparator b = null;
-		
+
 		B b1 = new B(1);
 		B b2 = new B(2);
-		
+
 		B bx = b1;
 		b1 = b2;
 		System.out.println(bx);
 		System.out.println(b1);
-		
-		int[] ar = {1,2};
-		int[] br = {1,2};
-		System.out.println("Holla:"+ar.equals(br));
-		
+
+		int[] ar = { 1, 2 };
+		int[] br = { 1, 2 };
+		System.out.println("Holla:" + ar.equals(br));
+
 		Connection conn = null;
+
+		
+		
+		List<Double> listDou = Arrays.asList(1.2,5.6,8.5);
+		listDou.stream().forEach(x->{x=x+10;});
+		listDou.stream().forEach(System.out::println);
+		
 		
 
 	}
