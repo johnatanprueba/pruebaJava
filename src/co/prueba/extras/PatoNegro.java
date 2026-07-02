@@ -1,5 +1,13 @@
 package co.prueba.extras;
 
+interface Ipn{
+	static void saludar() {}
+}
+
+interface Ipne extends Ipn{
+	default void saludar() {}
+}
+
 enum LETRAS {
 	A, B {
 		public void saludar() {
